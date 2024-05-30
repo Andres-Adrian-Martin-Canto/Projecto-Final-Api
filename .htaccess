@@ -1,0 +1,8 @@
+# Activo el direccionamiento
+RewriteEngine On
+# No permito la navegacion entre carpetas.
+Options All -Indexes
+# Reglas
+RewriteRule ^(usuarios)/(login|registro) index.php?model=$1&accion=$2  [QSA]
+RewriteRule ^([a-z]+)(/(\d+))?$  index.php?model=$1&id=$3  [QSA]
+RewriteRule ^([a-z]+)/(pdf)$  index.php?model=$1&pdf=$2 [QSA]
